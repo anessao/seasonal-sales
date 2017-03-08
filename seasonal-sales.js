@@ -12,12 +12,15 @@ function departmentsDOM(xhrData){
 		deptString += `<div class="thumbnail">`;
 		deptString += `<div class="caption">`;
 		deptString += `<h3>${categories.name}</h3>`;
-		deptString += `<div id='${categories.name}'></div>`;
+		deptString += `<div class="row" id='${categories.name}'></div>`;
 		deptString += `</div></div></div>`;	
 	};
 	container.innerHTML = deptString;
 }
 
+/********************************
+INITIAL DOM WRITE FOR PRODUCTS XHR DATA
+********************************/
 function productsDOM (xhrData) {
 	var apparel = document.getElementById("Apparel");
 	var furniture = document.getElementById("Furniture");
@@ -29,18 +32,32 @@ function productsDOM (xhrData) {
 	for (var b = 0; b < xhrData.products.length; b++){
 		var productInfo = xhrData.products[b];
 		if (productInfo.category_id === 1) {
-			apparelString += productInfo.name + productInfo.price;
+			apparelString += `<div class="col-sm-12 col-md-6">`
+			apparelString += `<div class="thumbnail">`
+			apparelString += `<img src="..." alt="...">`
+			apparelString += `<div class="caption"><h5>${productInfo.name}</h5>`
+			apparelString += `<div class="price"><h6>Price: ${productInfo.price}</h6>`
+			apparelString += `</div></div></div></div>`
 		} else if (productInfo.category_id === 2) {
-			furnitureString += productInfo.name + productInfo.price;
+			furnitureString += `<div class="col-sm-12 col-md-6">`
+			furnitureString += `<div class="thumbnail">`
+			furnitureString += `<img src="..." alt="...">`
+			furnitureString += `<div class="caption"><h5>${productInfo.name}</h5>`
+			furnitureString += `<div class="price"><h6>Price: ${productInfo.price}</h6>`
+			furnitureString += `</div></div></div></div>`
 		} else if (productInfo.category_id === 3) {
-			householdString += productInfo.name + productInfo.price;
+			householdString += `<div class="col-sm-12 col-md-6">`
+			householdString += `<div class="thumbnail">`
+			householdString += `<img src="..." alt="...">`
+			householdString += `<div class="caption"><h5>${productInfo.name}</h5>`
+			householdString += `<div class="price"><h6>Price: ${productInfo.price}</h6>`
+			householdString += `</div></div></div></div>`
 		}
 	}
 	apparel.innerHTML = apparelString;
 	furniture.innerHTML = furnitureString;
 	household.innerHTML = householdString;
 }
-
 
 /********************************
 XHR DEPARTMENT FUNCTION EXECUTIONS
@@ -56,6 +73,7 @@ XHR PRODUCTS FUNCTION EXECUTIONS
 function products(){
 	var data = JSON.parse(this.responseText);
 	productsDOM(data);
+	discountPrices(data);
 }
 
 function loadFail(){
@@ -100,11 +118,11 @@ function setDiscount(){
 		autumnEl.classList.remove("discount");
 		springEl.classList.add("discount");
 	}
-	
+
+var discountedItems = document.getElementsByClassName("discount");
+console.log(discountedItems);
 }
 seasonSelect.addEventListener("change", setDiscount);
-
-
 
 
 
