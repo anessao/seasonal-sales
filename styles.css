@@ -1,0 +1,20 @@
+body {
+	background-color: #fff0c3;
+}
+.page-header {
+	background-color: #520037;
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+h1 {
+	margin-top: 0px;
+	padding-top: 20px;
+	color: white;
+	padding-left: 10px;
+}
+small {
+	color: #f7acbf !important;
+}
+.discount {
+	border: 3px solid red;
+}
