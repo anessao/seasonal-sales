@@ -18,6 +18,9 @@ small {
 .discount {
 	border: 3px solid red;
 }
+.hidden {
+	display: none;
+}
 /*.departments {
 	height: 50vh;
 }*/
