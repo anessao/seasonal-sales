@@ -9,7 +9,7 @@ function departmentsDOM(xhrData){
 	deptString = '';
 	for (var a = 0; a < xhrData.categories.length; a++) {
 		categories = xhrData.categories[a];
-		deptString += `<div class="col-sm-6 col-md-4 departments" id="${categories.season_discount}">`;
+		deptString += `<div class="col-sm-12 col-md-12 departments" id="${categories.season_discount}">`;
 		deptString += `<h3>${categories.name}</h3>`;
 		deptString += `<div class="row" id='${categories.name}'></div>`;
 		deptString += `</div>`;
@@ -33,7 +33,7 @@ function productsDOM (xhrData) {
 		var productInfo = xhrData.products[b];
 		if (productInfo.category_id === 1) {
 			var reducedX = productInfo.price - (productInfo.price * categoryDiscounts[0])
-			apparelString += `<div class="col-sm-6 col-md-4">`
+			apparelString += `<div class="col-sm-6 col-md-4 items">`
 			apparelString += `<h5>${productInfo.name}</h5>`
 			apparelString += `<div class="original-price"><h6>List Price: ${productInfo.price}</h6></div>`
 			apparelString += `<div class="sale-price hidden"><h6>Sale Price: ${reducedX.toFixed(2)}</h6></div>`
@@ -41,14 +41,14 @@ function productsDOM (xhrData) {
 
 		} else if (productInfo.category_id === 2) {
 			var reducedY = productInfo.price - (productInfo.price * categoryDiscounts[1])
-			furnitureString += `<div class="col-sm-6 col-md-4">`
+			furnitureString += `<div class="col-sm-6 col-md-4 items">`
 			furnitureString += `<h5>${productInfo.name}</h5>`
 			furnitureString += `<div class="original-price"><h6>List Price: ${productInfo.price}</h6></div>`
 			furnitureString += `<div class="sale-price hidden"><h6>Sale Price: ${reducedY.toFixed(2)}</h6></div>`
 			furnitureString += `</div>`
 		} else if (productInfo.category_id === 3) {
 			var reducedZ = productInfo.price - (productInfo.price * categoryDiscounts[2])
-			householdString += `<div class="col-sm-6 col-md-4">`
+			householdString += `<div class="col-sm-6 col-md-4 items">`
 			householdString += `<h5>${productInfo.name}</h5>`
 			householdString += `<div class="original-price"><h6>List Price: ${productInfo.price}</h6></div>`
 			householdString += `<div class="sale-price hidden"><h6>Sale Price: ${reducedZ.toFixed(2)}</h6></div>`
