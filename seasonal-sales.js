@@ -47,7 +47,7 @@ function productsDOM (xhrData) {
 			furnitureString += `<div class="sale-price hidden"><h6>Sale Price: ${reducedY.toFixed(2)}</h6></div>`
 			furnitureString += `</div>`
 		} else if (productInfo.category_id === 3) {
-			var reducedZ = productInfo.price - (productInfo.price * categoryDiscounts[0])
+			var reducedZ = productInfo.price - (productInfo.price * categoryDiscounts[2])
 			householdString += `<div class="col-sm-6 col-md-4">`
 			householdString += `<h5>${productInfo.name}</h5>`
 			householdString += `<div class="original-price"><h6>List Price: ${productInfo.price}</h6></div>`
@@ -101,10 +101,18 @@ myRequest2.send();
 /********************************
 DISCOUNT CATEGORIES
 ********************************/
+
 function resetHidden(){
 	var salePrices = document.getElementsByClassName("sale-price");
 	for (var v = 0; v < salePrices.length; v++) {
 		salePrices[v].classList.add("hidden");
+	}
+}
+
+function resetDiscount (){
+	var deptDivs = document.getElementsByClassName("departments");
+	for (var w = 0; w < deptDivs.length; w++) {
+		deptDivs[w].classList.remove("discount");
 	}
 }
 
@@ -114,26 +122,21 @@ function setDiscount(){
 	var springEl = document.getElementById("Spring");
 	var setClass = seasonSelect.value;
 	resetHidden();
+	resetDiscount();
 	if (setClass === "Winter") {
 		var hiddenWinter = winterEl.getElementsByClassName("hidden");
-		autumnEl.classList.remove("discount");
-		springEl.classList.remove("discount");
 		winterEl.classList.add("discount");
 		for (var j = 0; j <= hiddenWinter.length + 1; j++) {
 			hiddenWinter[0].classList.remove("hidden");
 		}
 	} else if (setClass === "Autumn") {
 		var hiddenAutumn = autumnEl.getElementsByClassName("hidden");
-		winterEl.classList.remove("discount");
-		springEl.classList.remove("discount");
 		autumnEl.classList.add("discount");
 		for (var m = 0; m <= hiddenAutumn.length + 1; m++) {
 			hiddenAutumn[0].classList.remove("hidden");
 		}
 	} else if (setClass === "Spring") {
 		var hiddenSpring = springEl.getElementsByClassName("hidden");
-		winterEl.classList.remove("discount");
-		autumnEl.classList.remove("discount");
 		springEl.classList.add("discount");
 		for (var n = 0; n <= hiddenSpring.length + 2; n++) {
 			hiddenSpring[0].classList.remove("hidden");
