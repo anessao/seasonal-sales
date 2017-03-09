@@ -21,6 +21,28 @@ small {
 .hidden {
 	display: none;
 }
-/*.departments {
-	height: 50vh;
-}*/
+.sale-price {
+	width: 100%;
+	background-color: red;
+	text-align: center;
+	padding: 1px;
+}
+.sale-price h6{
+	color: white;
+	font-size: 1.5rem;
+}
+
+.departments {
+	border-radius: 5px;
+	margin: 3px;
+	background-color: white;
+}
+
+.container {
+	width: 90%;
+}
+
+
+
+
+
