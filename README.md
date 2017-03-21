@@ -36,7 +36,7 @@
 ```
 
 #### SCREENSHOT
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/anessao/seasonal-sales/jsonItems/Screen%20Shot%202017-03-20%20at%209.17.02%20PM.png)
 
 #### TECHNOLOGIES USED
 - JavaScript
