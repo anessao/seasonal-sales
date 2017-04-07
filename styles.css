@@ -1,0 +1,65 @@
+body {
+	background-color: #fff0c3;
+}
+.page-header {
+	background-color: #520037;
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+h1 {
+	margin-top: 0px;
+	padding-top: 20px;
+	color: white;
+	padding-left: 10px;
+}
+small {
+	color: #f7acbf !important;
+}
+.discount {
+	border: 3px solid red;
+}
+.hidden {
+	display: none;
+}
+.sale-price {
+	width: 100%;
+	background-color: red;
+	text-align: center;
+	padding: 1px;
+}
+.sale-price h6{
+	color: white;
+	font-size: 1.5rem;
+}
+
+.departments {
+	border-radius: 5px;
+	margin: 3px;
+	background-color: white;
+	min-height: 200px;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
+.container {
+	width: 95%;
+	padding: 0px;
+}
+
+.items {
+	padding: 2px;
+	border: 1px solid black;
+	height: 100px;
+}
+
+.selector {
+	width: 100%;
+	background-color: white;
+	height: 50px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+
+
+
